@@ -2,6 +2,7 @@
 
 using namespace std;
 
+
 template<class T>
 void list<T>::list_insert(T* n_node){
     if(!this->head){
@@ -24,12 +25,13 @@ int main(){
     ht_item_list *head = new ht_item_list();
 
 	ht_item *n_node = new ht_item(4,5);
-	list<ht_item> item_list = head->get_item_list();
-    item_list.list_insert(n_node);
     
-    head->get_item_list() = item_list;	
+    head->get_item_list().list_insert(n_node);    
     
-    if(!head->get_item_list().list_head())
-		cout << "ff" <<endl;
-    return 0; 
+    if(!head->get_item_list().list_head()){
+	    cout<<"gg"<<endl;
+	}	
+	
+	cout<<head->get_item_list().list_head()->hash<<endl;
+	return 0; 
 }

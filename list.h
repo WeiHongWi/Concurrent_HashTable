@@ -16,7 +16,6 @@ class ht_item{
 template<class T>
 class list{
 	T* head;
-    
 	public:
 	list(){
 	    this->head = NULL;
@@ -36,25 +35,27 @@ class list{
 	T* list_concat(T& head1 , T& head2);
 
 	T* list_remove(T* d_node);
+    
+//	list operator=(list l1);
 };
 
 class ht_item_list{
 	private:
     	size_t index;
-    public:
 		list<ht_item> head;
 		ht_item_list *next;
+    public:
 		ht_item_list(){
 		    this->head = NULL;
 			this->next = NULL;
 			index = 0;
 		}
 
-		list<ht_item> get_item_list(){
+		list<ht_item>& get_item_list(){
 		    return this->head;
 		}
 
-		size_t get_index(){
+		size_t& get_index(){
 		    return this->index;
 		}
 
