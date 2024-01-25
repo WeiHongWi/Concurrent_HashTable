@@ -39,8 +39,7 @@ class ht_item_list {
   ht_item_list* next;
 
  public:
-  ht_item_list() {
-    this->head = NULL;
+  ht_item_list() :head(){
     this->next = NULL;
     index = 0;
   }
@@ -54,7 +53,7 @@ class ht_iterator_list {
  public:
   list<ht_item_list> head;
 
-  ht_iterator_list() { head = NULL; }
+  ht_iterator_list(): head() {}
 
   list<ht_item_list>& get_iterator_list() { return head; }
 };
